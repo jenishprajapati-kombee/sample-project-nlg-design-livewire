@@ -22,9 +22,9 @@
 
 </head>
 
-<body class="min-h-screen bg-white dark:bg-zinc-800">
+<body class="min-h-screen lg:bg-blue-100/50 dark:bg-zinc-800">
     <x-layouts.app.secondary-header />
-    <flux:main>
+    <flux:main wrapper="false" class="p-2! flux-no-padding flux-no-margin overflow-x-hidden">
         {{ $slot }}
     </flux:main>
     {{-- Flux Scripts --}}

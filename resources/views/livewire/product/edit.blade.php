@@ -1,8 +1,8 @@
 <div class="flex h-full w-full flex-1 flex-col gap-4 rounded-xl">
-    <form wire:submit="store" class="space-y-8">
+    <form wire:submit="store" class="space-y-0">
         <!-- Basic Information Section -->
-        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-white dark:bg-gray-800 rounded-xl lg:border border-gray-200 dark:border-gray-700 p-2 lg:p-6">
+            <div class="grid grid-cols-1 md:grid-cols-2  gap-4 lg:gap-6 mb-0">
                     <div class="flex-1">
         <flux:field>
             <flux:label for="name" required>{{ __('messages.product.create.label_name') }} <span class="text-red-500">*</span></flux:label>
@@ -36,13 +36,13 @@
          
 
         <!-- Action Buttons -->
-        <div class="flex items-center justify-top gap-3 mt-12">
+        <div class="flex items-center justify-top gap-3 mt-3 lg:mt-3 border-t-2 lg:border-none border-gray-100 py-4 lg:py-0">
 
-            <flux:button type="submit" variant="primary" data-testid="submit_button" class="cursor-pointer" wire:loading.attr="disabled" wire:target="store">
+            <flux:button type="submit" variant="primary" data-testid="submit_button" class="cursor-pointer h-8! lg:h-9!" wire:loading.attr="disabled" wire:target="store">
                 {{ __('messages.update_button_text') }}
             </flux:button>
 
-            <flux:button type="button" data-testid="cancel_button" class="cursor-pointer" variant="outline" href="/product" wire:navigate>
+            <flux:button type="button" data-testid="cancel_button" class="cursor-pointer  h-8! lg:h-9!" variant="outline" href="/product" wire:navigate>
                 {{ __('messages.cancel_button_text') }}
             </flux:button>
         </div>

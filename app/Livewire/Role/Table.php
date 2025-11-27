@@ -98,10 +98,10 @@ final class Table extends PowerGridComponent
                     'flex rounded-md ring-1 transition focus:ring-2
                         dark:text-white text-white
                         bg-black hover:bg-gray-800
-                        border-0 py-2 px-3
+                        border-0 py-2 px-2
                         focus:outline-none
                         sm:text-sm sm:leading-6
-                        w-11 h-9 inline-flex items-center justify-center ml-1
+                        w-8 h-8 lg:w-9 lg:h-9 inline-flex items-center justify-center ml-1
                         focus:ring-black focus:ring-offset-1'
                 );
         }
@@ -119,10 +119,10 @@ final class Table extends PowerGridComponent
                 ->class('
                     flex rounded-md ring-1 transition focus:ring-2
                     text-white bg-green-600 hover:bg-green-700
-                    border-0 py-2 px-3
+                    border-0 py-2 px-2
                     focus:outline-none
                     sm:text-sm sm:leading-6
-                    w-11 h-9 inline-flex items-center justify-center ml-1
+                    w-8 h-8 lg:w-9 lg:h-9 inline-flex items-center justify-center ml-1
                     focus:ring-green-600 focus:ring-offset-1
                 ');
         }
@@ -136,10 +136,10 @@ final class Table extends PowerGridComponent
                     flex rounded-md ring-1 transition focus:ring-2
                     text-white ring-red-700
                     bg-red-600 hover:bg-red-700
-                    border-0 py-2 px-3
+                    border-0 py-2 px-2
                     focus:outline-none
                     sm:text-sm sm:leading-6
-                    w-11 h-9 inline-flex items-center justify-center ml-1"
+                    w-8 h-8 lg:w-9 lg:h-9 inline-flex items-center justify-center ml-1"
                     data-testid="bulk_delete_button"
                     wire:click="bulkDelete"
                     title="Bulk Delete Roles">
@@ -249,22 +249,22 @@ final class Table extends PowerGridComponent
 
         if (Gate::allows('show-role')) {
             $actions[] = Button::add('view')
-                ->slot('<div title="' . __('messages.tooltip.view') . '" class="flex items-center justify-center" data-testid="view_button">' . view('components.flux.icon.eye', ['variant' => 'micro', 'attributes' => new \Illuminate\View\ComponentAttributeBag(['class' => 'text-green-600 hover:text-green-800'])])->render() . '</div>')
-                ->class('border border-green-200 text-green-600 hover:bg-green-50 hover:border-green-300 py-2 px-2 rounded text-sm cursor-pointer hover:cursor-pointer')
+                ->slot('<div title="' . __('messages.tooltip.view') . '" class="flex items-center justify-center" data-testid="view_button">' . view('components.flux.icon.eye', ['variant' => 'micro', 'attributes' => new \Illuminate\View\ComponentAttributeBag(['class' => ''])])->render() . '</div>')
+                ->class('w-full sm:w-auto text-gray-600 bg-gray-200 hover:bg-gray-300 py-2 px-2 rounded text-lg cursor-pointer hover:cursor-pointer text-gray-500 hover:text-gray-900')
                 ->dispatch('open-slide', ['title' => 'Role Details', 'component' => 'Role.show', 'params' => ['id' => $row->id]]);
         }
 
         if (Gate::allows('edit-role')) {
             $actions[] = Button::add('edit')
-                ->slot('<div title="Edit" class="flex items-center justify-center" data-testid="edit_button">' . view('components.flux.icon.pencil', ['variant' => 'micro', 'attributes' => new \Illuminate\View\ComponentAttributeBag(['class' => 'text-blue-600 hover:text-blue-800'])])->render() . '</div>')
-                ->class('border border-blue-200 text-blue-600 hover:bg-blue-50 hover:border-blue-300 py-2 px-2 rounded text-sm cursor-pointer hover:cursor-pointer')
+                ->slot('<div title="Edit" class="flex items-center justify-center" data-testid="edit_button">' . view('components.flux.icon.pencil', ['variant' => 'micro', 'attributes' => new \Illuminate\View\ComponentAttributeBag(['class' => ''])])->render() . '</div>')
+                ->class('w-full sm:w-auto text-gray-600 bg-gray-200 hover:bg-gray-300 py-2 px-2 rounded text-lg cursor-pointer hover:cursor-pointer text-gray-500 hover:text-gray-900')
                 ->dispatch('open-slide', ['title' => 'Edit Role', 'component' => 'Role.edit', 'params' => ['id' => $row->id]]);
         }
 
         if (Gate::allows('delete-role')) {
             $actions[] = Button::add('delete-role')
-                ->slot('<div title="' . __('messages.tooltip.click_delete') . '" class="flex items-center justify-center" data-testid="delete_button">' . view('components.flux.icon.trash', ['variant' => 'micro', 'attributes' => new \Illuminate\View\ComponentAttributeBag(['class' => 'text-red-600 hover:text-red-800'])])->render() . '</div>')
-                ->class('border border-red-200 text-red-600 hover:bg-red-50 hover:border-red-300 py-2 px-2 rounded text-sm cursor-pointer hover:cursor-pointer')
+                ->slot('<div title="' . __('messages.tooltip.click_delete') . '" class="flex items-center justify-center" data-testid="delete_button">' . view('components.flux.icon.trash', ['variant' => 'micro', 'attributes' => new \Illuminate\View\ComponentAttributeBag(['class' => ''])])->render() . '</div>')
+                ->class('w-full h-8 sm:h-auto sm:w-auto bg-red-100 sm:bg-red-0 text-red-600 hover:bg-red-200 py-2 px-2 rounded text-lg cursor-pointer hover:cursor-pointer hover:text-red-800')
                 ->dispatchTo('role.delete', 'delete-confirmation', ['ids' => [$row->id], 'tableName' => $this->tableName]);
         }
 

@@ -21,7 +21,7 @@
     </form>
 
     @if (Route::has('password.request'))
-    <div class="space-x-1 text-sm text-left rtl:space-x-reverse text-zinc-600 dark:text-zinc-400">
+    <div class="text-sm text-center rtl:space-x-reverse text-zinc-600 dark:text-zinc-400">
         <flux:link data-testid="forgot_password" :href="route('password.request')" wire:navigate>{{ __('messages.login.forgot_password_title') }}?</flux:link>
     </div>
     @endif

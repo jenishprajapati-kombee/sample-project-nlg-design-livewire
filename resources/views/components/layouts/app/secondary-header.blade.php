@@ -127,7 +127,7 @@
 
 
 {{-- ✅ Responsive Header --}}
-<flux:header class="block! bg-white lg:bg-zinc-50 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-700 px-0">
+<flux:header class="block! h-16 bg-white lg:bg-zinc-50 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-700 px-4!">
     {{-- 📱 Mobile Navbar --}}
     <flux:navbar class="flex items-center justify-between lg:hidden py-3">
         <div class="flex items-center gap-3">
@@ -198,12 +198,12 @@
     {{-- 💻 Desktop Header --}}
     <div class="hidden lg:flex items-center justify-between w-full mt-3">
         {{-- Left-aligned Breadcrumb (hidden on mobile) --}}
-        <div class="flex-1 pl-6 hidden md:block">
+        <div class="flex-1 hidden md:block">
             <livewire:breadcrumb />
         </div>
 
         {{-- Right Section --}}
-        <div class="flex items-center gap-3 pr-6 flex-wrap justify-end">
+        <div class="flex items-center gap-0 pr-0 flex-wrap justify-end">
             {{-- Theme Dropdown --}}
             <flux:dropdown x-data align="end">
                 <flux:button variant="subtle" square class="group cursor-pointer" aria-label="Preferred color scheme" data-testid="side_menu_appearance">

@@ -98,10 +98,10 @@ final class Table extends PowerGridComponent
                     'flex rounded-md ring-1 transition focus:ring-2
                         dark:text-white text-white
                         bg-black hover:bg-gray-800
-                        border-0 py-2 px-3
+                        border-0 py-2 px-2
                         focus:outline-none
                         sm:text-sm sm:leading-6
-                        w-11 h-9 inline-flex items-center justify-center ml-1
+                        w-8 h-8 lg:w-9 lg:h-9 inline-flex items-center justify-center ml-1
                         focus:ring-black focus:ring-offset-1'
                 );
         }
@@ -119,10 +119,10 @@ final class Table extends PowerGridComponent
                 ->class('
                     flex rounded-md ring-1 transition focus:ring-2
                     text-white bg-green-600 hover:bg-green-700
-                    border-0 py-2 px-3
+                    border-0 py-2 px-2
                     focus:outline-none
                     sm:text-sm sm:leading-6
-                    w-11 h-9 inline-flex items-center justify-center ml-1
+                    w-8 h-8 lg:w-9 lg:h-9 inline-flex items-center justify-center ml-1
                     focus:ring-green-600 focus:ring-offset-1
                 ');
         }
@@ -130,16 +130,14 @@ final class Table extends PowerGridComponent
         if (Gate::allows('bulkDelete-product')) {
             $headerArray[] = Button::add('bulk-delete')
                 ->slot('<div x-show="$wire.checkboxValues && $wire.checkboxValues.length > 0" x-transition>
-                <div class="flex items-center justify-center 
-                    cursor-pointer
-                    focus:ring-red-600
-                    flex rounded-md ring-1 transition focus:ring-2
-                    text-white ring-red-700
-                    bg-red-600 hover:bg-red-700
-                    border-0 py-2 px-3
-                    focus:outline-none
-                    sm:text-sm sm:leading-6
-                    w-11 h-9 inline-flex items-center justify-center ml-1"
+                <div class="flex rounded-md ring-1 transition focus:ring-2
+                        dark:text-white text-white
+                        bg-red-600 hover:bg-red-600
+                        border-0 py-2 px-2
+                        focus:outline-none
+                        sm:text-sm sm:leading-6
+                        w-8 h-8 lg:w-9 lg:h-9 items-center justify-center ml-1
+                        focus:ring-red focus:ring-offset-1"
                     data-testid="bulk_delete_button"
                     wire:click="bulkDelete"
                     title="Bulk Delete Products">

@@ -170,3 +170,7 @@ function initSlidePanel() {
         document.addEventListener('alpine:init', () => register(Alpine));
     }
 }
+
+
+// Import PowerGrid responsive functionality
+import './powergrid-responsive.js';
