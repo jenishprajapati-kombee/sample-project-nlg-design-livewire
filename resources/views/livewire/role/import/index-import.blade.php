@@ -14,9 +14,12 @@
                 <!--begin::Card body-->
                 <div class="card-body">
                     <!--begin::Table-->
-                    <livewire:role.import.import-table>
-                        <!--end::Table-->
-                        <livewire:role.import.import-error-page />
+                    <div
+                        class="bg-white dark:bg-gray-800 lg:rounded-xl lg:shadow-sm border-none lg:border border-neutral-200 dark:border-neutral-700 p-0 lg:p-2">
+                        <livewire:role.import.import-table>
+                    </div>
+                    <!--end::Table-->
+                    <livewire:role.import.import-error-page />
                 </div>
                 <!--end::Card body-->
             </div>
